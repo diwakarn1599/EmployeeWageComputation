@@ -12,25 +12,27 @@ namespace EmployeeWageComputation
 
         static void Main(string[] args)
         {
-            int wagesPerDay;   
+            int wagesPerDay = 0;   
             int workingHours = 0;
             Console.WriteLine("Welcome to Employee Wage Computation Problem");
             Random rand = new Random(); // intializing random class
             int empInput = rand.Next(0, 3);//Generating random b/w 0 and 3
-            if(empInput == FULL_TIME)
+            switch (empInput)
             {
-                Console.WriteLine("Employee is Present Full Time");
-                workingHours = 8;
-            }else if(empInput == PART_TIME)
-            {
-                Console.WriteLine("Employee is Present Part Time");
-                workingHours = 4;
+                case FULL_TIME:
+                    Console.WriteLine("Employee is Present Full Time");
+                    workingHours = 8;
+                    break;
+                case PART_TIME:
+                    Console.WriteLine("Employee is Present Part Time");
+                    workingHours = 4;
+                    break;
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    break;
+
             }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                workingHours = 0;
-            }
+            
             wagesPerDay = WAGE_PER_HOUR * workingHours;
             Console.WriteLine("Employee wage per day is "+ wagesPerDay);
             
