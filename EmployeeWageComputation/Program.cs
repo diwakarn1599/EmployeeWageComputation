@@ -5,8 +5,9 @@ namespace EmployeeWageComputation
     class Program
     {
         //initialzing constants
-        public const int PRESENT = 1;
+        public const int FULL_TIME = 1;
         public const int ABSENT = 0;
+        public const int PART_TIME = 2;
         public const int WAGE_PER_HOUR = 20;
 
         static void Main(string[] args)
@@ -15,11 +16,15 @@ namespace EmployeeWageComputation
             int workingHours = 0;
             Console.WriteLine("Welcome to Employee Wage Computation Problem");
             Random rand = new Random(); // intializing random class
-            int empInput = rand.Next(0, 2);//Generating random b/w 0 and 2
-            if(empInput == PRESENT)
+            int empInput = rand.Next(0, 3);//Generating random b/w 0 and 3
+            if(empInput == FULL_TIME)
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is Present Full Time");
                 workingHours = 8;
+            }else if(empInput == PART_TIME)
+            {
+                Console.WriteLine("Employee is Present Part Time");
+                workingHours = 4;
             }
             else
             {
