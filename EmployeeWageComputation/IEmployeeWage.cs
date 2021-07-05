@@ -8,6 +8,8 @@ namespace EmployeeWageComputation
     {
         public void AddWage(string comp, int wagePerHour, int workingDaysPerMonth, int maxWorkingHours);
         public void ComputeEmpWage();
-       
+
+        //for saving total wage for each company
+        public int GetTotalWage(string company);
     }
 }
