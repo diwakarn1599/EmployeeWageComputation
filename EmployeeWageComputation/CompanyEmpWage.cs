@@ -6,12 +6,14 @@ namespace EmployeeWageComputation
 {
     class CompanyEmpWage
     {
+        //instance variables
         public string company;
         public int wagePerHour;
         public int workingDaysPerMonth;
         public int maxWorkingHours;
         public int wagesForMonth;
 
+        // parameterized constructor for this class
         public CompanyEmpWage(string comp, int wagePerHour, int workingDaysPerMonth, int maxWorkingHours)
         {
             this.company = comp;

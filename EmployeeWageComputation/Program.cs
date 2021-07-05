@@ -2,15 +2,12 @@
 
 namespace EmployeeWageComputation
 {
-    class EmployeeWage
+    class EmployeeWage : IEmployeeWage
     {
         //initialzing constants
         public const int FULL_TIME = 1;
         public const int ABSENT = 0;
         public const int PART_TIME = 2;
-        //public const int WAGE_PER_HOUR = 20;
-        //public const int WORKING_DAYS_PER_MONTH = 20;
-        //public const int WORKING_HOURS_PER_MONTH = 100;
         
         private int  noOfCompanies = 0;
         private CompanyEmpWage[] CompanyEmpArray;
@@ -25,6 +22,7 @@ namespace EmployeeWageComputation
             CompanyEmpArray[this.noOfCompanies++] = new CompanyEmpWage( comp,  wagePerHour,  workingDaysPerMonth,  maxWorkingHours);
         }
 
+        //method for compute wage
         public void ComputeEmpWage()
         {
             for(int i = 0; i < noOfCompanies; i++)
@@ -78,19 +76,6 @@ namespace EmployeeWageComputation
             emp.AddWage("Tvs", 50, 20, 100);
             emp.AddWage("Zoho", 40, 20, 200);
             emp.ComputeEmpWage();
-
-            //parameterized constructor for employee wage class to initialize tvs variables
-            //EmployeeWage tvs = new EmployeeWage("Tvs", 50, 20, 100);
-            //tvs.CalculateEmpWage();
-            //Console.WriteLine(tvs.toString());
-            ////parameterized constructor for employee wage class to initialize zoho variables
-            //EmployeeWage zoho = new EmployeeWage("Zoho", 40, 20, 200);
-            //zoho.CalculateEmpWage();
-            //Console.WriteLine(zoho.toString());
-
-            //CalculateEmpWage("Tvs",50,20,100);
-            //CalculateEmpWage("Zoho", 40, 20, 200);
-
         }
     }
 }
